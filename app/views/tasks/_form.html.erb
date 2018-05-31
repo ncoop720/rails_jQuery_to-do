@@ -1,13 +1,11 @@
-<%= form_with(model: @task, remote: true) do |f| %>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
+<%= form_for @task, remote: true do |f|   %>
+  <div class="form-group">
+    <%= f.text_area  :description, placeholder: "Describe your task!", class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :deadline %><br>
-    <%= f.datetime_select :deadline %>
+  <div class="form-group">
+    <%= f.text_field :deadline, id: "datetimepicker1", placeholder: "When's it due?", class: "form-control" %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <%= f.button :Submit, class: "btn btn-primary" %>
   </div>
 <% end %>
